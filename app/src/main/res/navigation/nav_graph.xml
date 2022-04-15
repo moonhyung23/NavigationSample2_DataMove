@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.example.a220314_navigation_1.SecondFragment"
+        android:label="SecondFragment"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <!--전달할 아이템-->
+        <argument
+            android:name="item"
+            app:argType="com.example.a220314_navigation_1.Item[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.a220314_navigation_1.FirstFragment"
+        android:label="FirstFragment"
+        tools:layout="@layout/fragment_first">
+
+        <argument
+            android:name="string"
+            app:argType="string"
+            android:defaultValue='""' />
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment2"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+</navigation>
